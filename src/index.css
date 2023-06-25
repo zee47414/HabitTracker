@@ -1,13 +1,285 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* style add for all element */
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+  color: yellowgreen;
+}a:hover{
+  color: white;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* style for body */
+body {
+  background-image: url("https://images.unsplash.com/photo-1597071622990-3a4ed91035b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njh8fHN1bnNldHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60");
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-size: cover;
+  color: lightgrey;
+}
+
+/* style root div */
+#root{
+  width: 80%;
+  border-right: 1px solid #323232;
+  border-left: 1px solid #323232;
+}
+
+/* style navbar component ---------------------------------*/
+.navbar{
+ background-color: #34495E;
+  align-items: center;
+  display: flex;
+  height: 100px;
+  padding: 0px 20px;
+  justify-content: space-between;
+  border-bottom: 1px solid #323232;
+}
+.right-nav{
+  display: flex;
+}
+.right-nav button{
+  width: 8vw;
+  height: 6vh;
+  border-radius: 10px;
+  background-color: #2AA8D0;
+  font-size: large;
+}
+.right-nav h3{
+  margin-top: 5%;
+  font-size: large;
+  color: lightgrey;
+  margin-right: 10px;
+}
+.addhabit-btn{
+  cursor: pointer;
+  color: white;
+  background-color: lightcoral;
+  padding: 8px 20px;
+  border-radius: 7px;
+}
+/* modal */
+.outter-div-container{
+  
+  margin-left:60vh;
+  display: flex;
+  margin-top: 20vh;
+  
+}
+.modal-content{
+  width: 40vh;
+  height: 40vh;
+  background-color: lightsalmon;
+  border-radius: 10px;
+}
+.modal-header{
+  padding: 25px;
+}
+.modal-header h3{
+  padding: 10px 0 10px 0;
+  color: #f8f5f5;
+}
+.modal-body label{
+  padding-right: 20px;
+  font-size: larger;
+  color: #f8f5f5;
+}
+.modal-body input{
+  border: none;
+  background: #f8f5f5;
+  padding: 5px;
+}
+.modal-body{
+  text-align: center;
+}
+.mb-3 input{
+height: 5vh;
+width: 30vh;
+padding: 5px;
+border-radius: 10px;
+}
+.modal-footer{
+ padding: 10px 0 10px 0;
+ display: flex;
+ justify-content: center;
+ gap: 20px;
+}
+.modal-footer button{
+  margin-top: 10vh;
+  border-radius: 10px;
+  width: 5vw;
+  height: 5vh;
+}
+.cancel-btn{
+  background-color: red;
+  color: white;
+  border: white solid 1px;
+}
+.cancel-btn:hover{
+  background-color: rgb(241, 235, 235);
+  color: red;
+  border: red solid 1px;
+} 
+.save-btn{
+  background-color: rgb(60, 197, 243);
+  color: white;
+  border: white solid 1px;
+}
+.save-btn:hover{
+  background-color: rgb(241, 235, 235);
+  color: rgb(60, 197, 243);
+  border: rgb(60, 197, 243) solid 1px;
+}
+/* ---------------------------------------------------- */
+
+/* habits components style------------------------------ */
+.habits{
+  width: 100%;
+}
+
+/* habit under habits component */
+.habit{
+  width: 100%;
+  height: 100px;
+  border-bottom: 1px solid #323232;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  background-color: darkgray;
+}
+.habit:hover{
+  background-color: #323232;
+}
+.habit-left{
+  display: flex;
+  align-items: center;
+}
+.habit-left img{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+.day-complete{
+  color: #767475;
+  font-size:small;
+}
+.habit-right{
+  display: flex;
+  align-items: center;
+}
+.habit-right img{
+  width: 24px;
+  height: 24px;
+  margin: 4px;
+}
+.dlt-div{
+  width: 32px;
+  height: 32px;
+  background-color: #424242;
+  border-radius: 50%;
+}
+.log-btn{
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #424242;
+  padding: 10px;
+  border-radius: 7px;
+  margin-right: 10px;
+  color: white;
+  border: none;
+  display: flex;
+}
+.log-btn img{
+  width: 20px;
+  height: 20px;
+  margin-top:2px ;
+  margin-right: 5px;
+}
+.log-btn h3{
+  color: black;
+}
+.log-btn h3:hover{
+  color: white;
+}
+.log-btn i{
+  margin-right: 5px;
+}
+/* ------------------------------------------------------*/
+
+/* style week view container --------------------------- */
+.days-container{
+  margin: 20px 0px;
+  display: flex;
+  justify-content: space-around;
+}
+.day-container img{
+  margin: 2.5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.btn-day-container{
+  display: flex;
+  gap: 15px;
+}
+.back-btn-con{
+  text-align: center;
+}
+.back-btn{
+  margin-top: 50px;
+  text-align: center;
+  width: 20vw;
+  height: 5vh;
+  border-radius: 10px;
+  background-color: rgba(14, 53, 77, 0.733);
+  color: white;
+  border: white solid 1px;
+}
+.back-btn:hover{
+  background-color: rgba(11, 11, 11, 0.733);
+  color: black;
+  border: black solid 1px;
+}
+
+/* style day view component */
+.day-container{
+  height: 100px;
+  width: 150px;
+  background-color: #323232;
+  border-radius: 20px;
+  padding: 5px;
+}
+p{
+  margin: 0%;
+}
+.circle-icon{
+  font-size: 24px;
+  margin: 5px 11px;
+  /* color: #0B5ED7; */
+  cursor: pointer;
+}
+.active{
+  background-color: #2AA8D0;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+}
+.notdoneBtn{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: white;
+  text-align: center;
+}
+.text-center{
+  margin: 0px 28px 0px 28px;
+}
+.date-p{
+  margin-bottom: 10px;
 }
